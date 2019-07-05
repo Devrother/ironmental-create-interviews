@@ -5,10 +5,19 @@
     ```bash
     $ yarn install
     ```
-
-2. Write interview data
+2. Create `.env` file
     
-    in `index.js` file
+    Create an .env file referring to the .env.sample file format
+    
+    ```
+    MONGODB_URL=example
+    MONGODB_NAME=example
+    ```
+
+3. Write interview data
+    
+    Fill in the `datas` variable in the `index.js` file
+    
     ```js
     const datas = [
         {
@@ -19,7 +28,7 @@
     ];
     ```
 
-3. Run program
+4. Run program
    
     ```bash
     $ yarn start
