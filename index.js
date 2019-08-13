@@ -24,6 +24,10 @@ const InterviewSchema = new Schema({
         type: Array,
         default: [],
     },
+    keywords: {
+        type: Array,
+        default: [],
+    }
 });
 
 const TagSchema = new Schema({
@@ -43,8 +47,8 @@ const Tag = mongoose.model('Tag', TagSchema);
 async function createInterview(interviews) {
     console.log('[+] Start creating interview !');
     for (const data of interviews) {
-        const {question, answer, tags} = data;
-        const interview = new Interview({question, answer, tags});
+        const {question, answer, tags, keywords} = data;
+        const interview = new Interview({question, answer, tags, keywords});
         const interviewId = (await interview.save())._id;
         console.log(`[+] Successful create interview "${question}" !`);
 
@@ -74,9 +78,11 @@ async function createInterview(interviews) {
 
 const datas = [
     {
-        'question': 'please write question!!',
-        'tags': ['tag1', 'tag2'],
-        'answer': 'please write answer!!'
+        'question': 'question example',
+        'keywords': ['keword1'],
+        'tags': ['tag1'],
+        'answer': 'answer example'
+
     },
 ];
 

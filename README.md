@@ -22,6 +22,7 @@
     const datas = [
         {
             'question': 'please write question!!',
+            'keywords': ['keyword1', 'keyword2'],
             'tags': ['tag1', 'tag2'],
             'answer': 'please write answer!!'
         },
